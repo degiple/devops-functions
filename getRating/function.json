@@ -1,0 +1,28 @@
+{
+    "disabled": false,
+    "bindings": [{
+            "authLevel": "anonymous",
+            "type": "httpTrigger",
+            "direction": "in",
+            "name": "req",
+            "methods": [
+                "get",
+                "post"
+            ]
+        },
+        {
+            "type": "http",
+            "direction": "out",
+            "name": "res"
+        },
+        {
+            "type": "cosmosDB",
+            "name": "ratingItem",
+            "databaseName": "RatingDatabase",
+            "collectionName": "RatingCollection",
+            "connectionStringSetting": "kt221_DOCUMENTDB",
+            "direction": "in",
+            "Id": "{Query.ratingId}"
+        }
+    ]
+}
